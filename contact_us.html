@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>
+            Contact Us Form design
+        </title>
+        <link rel="stylesheet" type="text/css" href="contact_Us.css">
+    </head>
+    
+    <script>
+        function validateForm() {
+          var js_name = document.forms["contact-form"]["name"].value;
+          var js_email = document.forms["contact-form"]["email"].value;
+          var js_message = document.forms["contact-form"]["message"].value;
+          if (js_name == "") {
+            alert("Name must be filled out");
+            return false;
+          }else if(js_email==""){
+            alert("email must be filled out");
+            return false;
+          }else if(js_message==""){
+            alert("message must be filled out");
+            return false;
+          }
+        }
+        </script>
+    <body>
+        <div class="contact-title">
+            <h1>  Dear Valuable Customer   </h1>
+            <h2>
+               We are here for you...
+            </h2>
+        </div>
+        <div class="contact-form">
+            <form id="contact-form" method="POST" onsubmit="return validateForm()" action="contact_Us.php" required>
+                <input name="name" type="text" class="form-control" placeholder="Your Name" >
+                <br>
+                <input name="email" type="text" class="form-control" placeholder="Your email" >
+                <br>
+                <textarea name="message" class="form-control" placeholder="message"  rows="4" ></textarea>
+                <br>
+                <input type="submit" name="submit" id="submit" class="form-control-submit" value="SEND MESSAGE">
+            </form>
+        </div>
+    </body>
+    </html>
